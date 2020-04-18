@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y git && \
     git clone https://github.com/daneedk/homeydash.com.git && \
     npm install -g serve
 
-WORKDIR /homey.ink
+WORKDIR /homeydash.com
 EXPOSE $PORT
 
 CMD ["serve", "app"]
