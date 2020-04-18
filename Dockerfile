@@ -7,7 +7,7 @@ ENV REPO_NAME="daneedk"
 ENV PORT=6000
 
 RUN apt-get update && apt-get install -y git && \
-    git clone https://github.com/$REPO/homey.ink && \
+    git clone https://github.com/daneedk/homeydash.com.git && \
     npm install -g serve
 
 WORKDIR /homey.ink
