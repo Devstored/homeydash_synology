@@ -15,13 +15,10 @@ RUN mkdir -p app/token
 COPY token.txt ./app/token
 RUN chmod 755 ./app/token
 RUN echo $HOMEY_TOKEN > ./app/token/token.txt
-RUN cat ./app/token/token.txt
+#RUN cat ./app/token/token.txt
 
-
-
-#ADD token.txt /token/token.txt
-
-VOLUME ["/app/token"]
+VOLUME ["./app/token"]
+VOLUME ["app/token"]
 WORKDIR /homeydash.com
 EXPOSE 5000
 
