@@ -11,13 +11,19 @@ RUN apt-get update && apt-get install -y git && \
     npm install -g serve
 
 WORKDIR /homeydash.com
-ADD app/token/token.txt .
-RUN chmod 775 app/token/
-RUN echo $HOMEY_TOKEN > app/token/token.txt
-VOLUME ["app/token"]
-EXPOSE 5000
+RUN mkdir -p app/token
+COPY token.txt ./app/token
+RUN chmod 755 ./app/token
+RUN echo $HOMEY_TOKEN > ./app/token/token.txt
+RUN cat ./app/token/token.txt
 
-RUN echo $HOMEY_TOKEN
+
+
+#ADD token.txt /token/token.txt
+
+VOLUME ["/app/token"]
+WORKDIR /homeydash.com
+EXPOSE 5000
 
 CMD ["serve", "app"]
 
