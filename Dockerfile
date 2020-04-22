@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y git && \
     npm install -g serve
 
 WORKDIR /homeydash.com
-EXPOSE 6000
+EXPOSE 5000
 
 CMD ["serve", "app"]
 
