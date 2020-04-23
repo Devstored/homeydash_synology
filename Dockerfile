@@ -13,17 +13,8 @@ RUN apt-get update && apt-get install -y git && \
 
 
 WORKDIR /homeydash.com
-RUN pwd
-RUN ls
-RUN ls app
-
-#RUN mkdir -p app/token
 COPY token.txt app/token/
 RUN chmod 755 app/token
-RUN ls app
-RUN ls app/token
-
-
 RUN echo $HOMEY_TOKEN > app/token/token.txt
 RUN cat app/token/token.txt
 
