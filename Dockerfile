@@ -10,7 +10,12 @@ RUN apt-get update && apt-get install -y git && \
     git clone https://github.com/Devstored/homeydash.com.git && \
     npm install -g serve
 
+
+
 WORKDIR /homeydash.com
+RUN npm install
+
+
 RUN mkdir -p app/token
 COPY token.txt ./app/token
 RUN chmod 755 ./app/token
