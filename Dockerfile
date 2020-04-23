@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y git && \
     npm install -g serve
 
 
-
+#Set TOKEN
 WORKDIR /homeydash.com
 COPY token.txt app/token/
 RUN chmod 755 app/token
